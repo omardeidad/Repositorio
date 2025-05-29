@@ -54,19 +54,42 @@
             padding: 10px;
             border-left: 5px solid #2a7f62;
         }
+
+        button {
+            margin: 10px 5px;
+            padding: 8px 12px;
+            background-color: #81c784;
+            border: none;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #66bb6a;
+        }
     </style>
 </head>
 <body>
     <main>
         <h1>Bienvenidos a Clínica Veterinaria Patitas Felices</h1>
+
         <nav>
             <a href="#quienes">¿Quiénes somos?</a>
             <a href="#catalogo">Catálogo de alimentos</a>
         </nav>
+
+        <!-- Botones con funciones interactivas -->
+        <div style="text-align: center;">
+            <button onclick="toggleCatalogo()">Mostrar/Ocultar Catálogo</button>
+            <button onclick="cambiarFondo()">Cambiar color de fondo</button>
+        </div>
+
         <section id="quienes">
             <h2>¿Quiénes somos?</h2>
             <p>Patitas Felices es una clínica dedicada al bienestar de tus mascotas. Contamos con personal especializado, equipo moderno y un trato lleno de amor.</p>
         </section>
+
         <section id="catalogo">
             <h2>Catálogo de alimentos</h2>
 
@@ -100,6 +123,7 @@
                 <strong>Precio:</strong> $120 MXN
             </div>
         </section>
+
         <article>
             <h3>Servicios destacados</h3>
             <dl>
@@ -146,5 +170,24 @@
 
         <progress value="100" max="100"></progress> 100% de amor y cuidado garantizado
     </main>
+    <script>
+        window.onload = function () {
+            alert("¡Bienvenido a Patitas Felices! Tu mascota está en buenas manos.");
+        };
+
+        function toggleCatalogo() {
+            const catalogo = document.getElementById("catalogo");
+            if (catalogo.style.display === "none") {
+                catalogo.style.display = "block";
+            } else {
+                catalogo.style.display = "none";
+            }
+        }
+
+        function cambiarFondo() {
+            const colores = ["#f0f8ff", "#fff8dc", "#e0f7fa", "#fce4ec"];
+            document.body.style.backgroundColor = colores[Math.floor(Math.random() * colores.length)];
+        }
+    </script>
 </body>
 </html>
