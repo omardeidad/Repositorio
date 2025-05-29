@@ -1,0 +1,193 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1'/>
+    <title>Clínica Veterinaria Patitas Felices</title>
+    <style>
+        body {
+            background-color: #f0f8ff;
+            color: #333;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 20px auto;
+            line-height: 1.6;
+            max-width: 900px;
+            border: 2px solid #ccc;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #2a7f62;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #c8e6c9;
+            padding: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #2a7f62;
+            font-weight: bold;
+        }
+
+        section#catalogo {
+            background-color: #fff;
+            border: 1px solid #aaa;
+            padding: 10px;
+        }
+
+        .producto {
+            margin-bottom: 15px;
+        }
+
+        marquee {
+            color: #d35400;
+        }
+
+        aside {
+            background-color: #e8f5e9;
+            padding: 10px;
+            border-left: 5px solid #2a7f62;
+        }
+
+        button {
+            margin: 10px 5px;
+            padding: 8px 12px;
+            background-color: #81c784;
+            border: none;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #66bb6a;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Bienvenidos a Clínica Veterinaria Patitas Felices</h1>
+
+        <nav>
+            <a href="#quienes">¿Quiénes somos?</a>
+            <a href="#catalogo">Catálogo de alimentos</a>
+        </nav>
+
+        <!-- Botones con funciones interactivas -->
+        <div style="text-align: center;">
+            <button onclick="toggleCatalogo()">Mostrar/Ocultar Catálogo</button>
+            <button onclick="cambiarFondo()">Cambiar color de fondo</button>
+        </div>
+
+        <section id="quienes">
+            <h2>¿Quiénes somos?</h2>
+            <p>Patitas Felices es una clínica dedicada al bienestar de tus mascotas. Contamos con personal especializado, equipo moderno y un trato lleno de amor.</p>
+        </section>
+
+        <section id="catalogo">
+            <h2>Catálogo de alimentos</h2>
+
+            <div class="producto">
+                <strong>1. Croquetas Premium para Perro</strong><br>
+                Bolsa de 10kg con alta proteína.<br>
+                <strong>Precio:</strong> $850 MXN
+            </div>
+
+            <div class="producto">
+                <strong>2. Alimento húmedo para Gato</strong><br>
+                Sabores surtidos. Lata de 85g.<br>
+                <strong>Precio:</strong> $35 MXN
+            </div>
+
+            <div class="producto">
+                <strong>3. Croquetas para Cachorro</strong><br>
+                Especial para razas pequeñas. Bolsa de 5kg.<br>
+                <strong>Precio:</strong> $480 MXN
+            </div>
+
+            <div class="producto">
+                <strong>4. Alimento para Conejos</strong><br>
+                Mezcla rica en fibra y vitaminas. Bolsa de 3kg.<br>
+                <strong>Precio:</strong> $260 MXN
+            </div>
+
+            <div class="producto">
+                <strong>5. Golosinas para Perros</strong><br>
+                Ideal para entrenar y premiar. Bolsa de 500g.<br>
+                <strong>Precio:</strong> $120 MXN
+            </div>
+        </section>
+
+        <article>
+            <h3>Servicios destacados</h3>
+            <dl>
+                <dt>Consulta general</dt>
+                <dd>Evaluación médica integral para perros, gatos y mascotas exóticas.</dd>
+
+                <dt>Vacunación</dt>
+                <dd>Esquemas de vacunación para mantener a tu mascota protegida.</dd>
+
+                <dt>Cirugía menor</dt>
+                <dd>Procedimientos ambulatorios realizados con estrictas medidas de higiene.</dd>
+            </dl>
+        </article>
+
+        <details>
+            <summary>Servicios adicionales</summary>
+            <ol>
+                <li>Peluquería canina</li>
+                <li>Estética felina</li>
+                <li>Venta de productos</li>
+                <li>Guardería para mascotas</li>
+                <li>Atención a domicilio</li>
+            </ol>
+        </details>
+
+        <section>
+            <h3>Fecha de apertura</h3>
+            <p>Abierta desde el <time datetime="2018-03-01">1 de marzo de 2018</time></p>
+        </section>
+
+        <section>
+            <h3>Fundadores</h3>
+            <p>Fundada por Patitas Felices S.A. de C.V.<sup>®️</sup></p>
+        </section>
+
+        <big>¡Cuidamos a tus mascotas como parte de nuestra familia!</big>
+
+        <marquee>¡Vacuna y consiente a tu mascota hoy mismo!</marquee>
+
+        <aside>
+            <h3>Dato curioso</h3>
+            <p>Los perros pueden oler enfermedades en humanos, como el cáncer o la diabetes. ¡Increíble!</p>
+        </aside>
+
+        <progress value="100" max="100"></progress> 100% de amor y cuidado garantizado
+    </main>
+    <script>
+        window.onload = function () {
+            alert("¡Bienvenido a Patitas Felices! Tu mascota está en buenas manos.");
+        };
+
+        function toggleCatalogo() {
+            const catalogo = document.getElementById("catalogo");
+            if (catalogo.style.display === "none") {
+                catalogo.style.display = "block";
+            } else {
+                catalogo.style.display = "none";
+            }
+        }
+
+        function cambiarFondo() {
+            const colores = ["#f0f8ff", "#fff8dc", "#e0f7fa", "#fce4ec"];
+            document.body.style.backgroundColor = colores[Math.floor(Math.random() * colores.length)];
+        }
+    </script>
+</body>
+</html>
