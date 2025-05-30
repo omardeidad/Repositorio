@@ -1,4 +1,4 @@
-<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -79,6 +79,9 @@
             <a href="#catalogo">Catálogo de alimentos</a>
         </nav>
         <div style="text-align: center;">
+            <button onclick="toggleBotones()">Mostrar/Ocultar Botones de Acción</button>
+        </div>
+        <div style="text-align: center;" id="botonesAccion">
             <button onclick="toggleCatalogo()">Mostrar/Ocultar Catálogo</button>
             <button onclick="cambiarFondo()">Cambiar color de fondo</button>
         </div>
@@ -168,6 +171,7 @@
 
         <progress value="100" max="100"></progress> 100% de amor y cuidado garantizado
     </main>
+
     <script>
         window.onload = function () {
             alert("¡Bienvenido a Patitas Felices! Tu mascota está en buenas manos.");
@@ -185,6 +189,15 @@
         function cambiarFondo() {
             const colores = ["#f0f8ff", "#fff8dc", "#e0f7fa", "#fce4ec"];
             document.body.style.backgroundColor = colores[Math.floor(Math.random() * colores.length)];
+        }
+
+        function toggleBotones() {
+            const botones = document.getElementById("botonesAccion");
+            if (botones.style.display === "none") {
+                botones.style.display = "block";
+            } else {
+                botones.style.display = "none";
+            }
         }
     </script>
 </body>
