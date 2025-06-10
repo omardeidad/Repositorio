@@ -80,10 +80,47 @@
       margin: 10px auto;
       border-radius: 8px;
     }
+
+    body.oscuro {
+      background-color: #121212;
+      color: #f0f0f0;
+      border-color: #444;
+    }
+    body.oscuro form {
+      background-color: #1e1e1e;
+      border-color: #555;
+    }
+    body.oscuro input, body.oscuro textarea {
+      background-color: #333;
+      color: #eee;
+      border-color: #555;
+    }
+    body.oscuro button {
+      background-color: #444;
+      color: #fff;
+    }
+    body.oscuro button:hover {
+      background-color: #666;
+    }
+    body.oscuro a {
+      color: #81c784;
+    }
+    body.oscuro a:hover {
+      text-decoration: underline;
+    }
+    body.oscuro #mensajeConfirmacion {
+      background-color: #2a2a2a;
+      border-color: #81c784;
+      color: #81c784;
+    }
   </style>
 </head>
 <body>
   <h1>Formulario de Contacto</h1>
+
+  <div style="text-align:center; margin-bottom: 15px;">
+    <button onclick="toggleModoOscuro()">Modo oscuro / claro</button>
+  </div>
 
   <form id="formulario-contacto">
     <label for="nombre">Nombre:</label><br />
@@ -112,6 +149,18 @@
   </p>
 
   <script>
+    window.onload = function () {
+      const modoGuardado = localStorage.getItem("modo-tema");
+      if (modoGuardado === "oscuro") {
+        document.body.classList.add("oscuro");
+      }
+    };
+
+    function toggleModoOscuro() {
+      document.body.classList.toggle("oscuro");
+      const modo = document.body.classList.contains("oscuro") ? "oscuro" : "claro";
+      localStorage.setItem("modo-tema", modo);
+    }
     document.getElementById("formulario-contacto").addEventListener("submit", function (e) {
       e.preventDefault();
       document.getElementById("mensajeConfirmacion").style.display = "block";
