@@ -45,6 +45,14 @@
             margin-bottom: 15px;
         }
 
+        .producto img {
+            width: 250px;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin-top: 8px;
+        }
+
         marquee {
             color: #d35400;
         }
@@ -72,13 +80,16 @@
 </head>
 <body>
     <main>
-        <h1>Bienvenidos a Clínica Veterinaria Patitas Felices</h1>
+        <h1 style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+    <img src="https://i.pinimg.com/564x/95/c1/ee/95c1ee5f19bd62cae70e39b4e0a69a07.jpg" alt="Logo" style="width: 100px; height: 100px;">
+    Bienvenidos a Clínica Veterinaria Patitas Felices
+</h1>
 
         <nav>
             <a href="#quienes">¿Quiénes somos?</a>
             <a href="#catalogo">Catálogo de alimentos</a>
-            <a href="contacto.html">Contacto</a>     
-            </nav>
+            <a href="#" onclick="irContacto()">Contacto</a>
+        </nav>
 
         <div style="text-align: center;">
             <button onclick="toggleBotones()">Mostrar/Ocultar Botones de Acción</button>
@@ -100,30 +111,40 @@
             <div class="producto">
                 <strong>1. Croquetas Premium para Perro</strong><br>
                 Bolsa de 10kg con alta proteína.<br>
+                <img src="https://i5.walmartimages.com.mx/gr/images/product-images/img_large/00750200287337L.jpg?odnHeight=612&odnWidth=612&odnBg=FFFFFF">
+                <br>
                 <strong>Precio:</strong> $850 MXN
             </div>
 
             <div class="producto">
                 <strong>2. Alimento húmedo para Gato</strong><br>
-                Sabores surtidos. Lata de 85g.<br>
+                Sabores surtidos. Sobre de 85g.<br>
+                <img src="https://arteli.vtexassets.com/arquivos/ids/248485-800-auto?v=638635779429670000&width=800&height=auto&aspect=true">
+                <br>
                 <strong>Precio:</strong> $35 MXN
             </div>
 
             <div class="producto">
                 <strong>3. Croquetas para Cachorro</strong><br>
                 Especial para razas pequeñas. Bolsa de 5kg.<br>
+                <img src="https://i5.walmartimages.com/asr/97955a92-037c-40f8-be3b-dac12f540409.059dbef6b36906ec7af5739b4562aa26.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF">
+                <br>
                 <strong>Precio:</strong> $480 MXN
             </div>
 
             <div class="producto">
                 <strong>4. Alimento para Conejos</strong><br>
                 Mezcla rica en fibra y vitaminas. Bolsa de 3kg.<br>
+                <img src="https://petshopdelivery.pe/5181-large_default/brit-animals-rabbit-conejo-adulto-3-kg.jpg">
+                <br>
                 <strong>Precio:</strong> $260 MXN
             </div>
 
             <div class="producto">
                 <strong>5. Golosinas para Perros</strong><br>
                 Ideal para entrenar y premiar. Bolsa de 500g.<br>
+                <img src="https://www.purina.com/_gatsby/image/114dc8627f7c46dacaa3b41c0234e91c/c36b855aa1f5fb641ad91723b483f8b5/t-bonz-filet-mignon-flavor-steak-shaped-dog-treats.avif?u=https%3A%2F%2Flive.purina.com%2Fsites%2Fdefault%2Ffiles%2Fproducts%2F2024-03%2Ft-bonz-filet-mignon-flavor-steak-shaped-dog-treats.png&a=w%3D1000%26h%3D1000%26fm%3Davif%26q%3D75&cd=9b01e9d8d9bb3a83109cec53bac78431">
+                <br>
                 <strong>Precio:</strong> $120 MXN
             </div>
         </section>
@@ -182,11 +203,7 @@
 
         function toggleCatalogo() {
             const catalogo = document.getElementById("catalogo");
-            if (catalogo.style.display === "none") {
-                catalogo.style.display = "block";
-            } else {
-                catalogo.style.display = "none";
-            }
+            catalogo.style.display = catalogo.style.display === "none" ? "block" : "none";
         }
 
         function cambiarFondo() {
@@ -196,11 +213,11 @@
 
         function toggleBotones() {
             const botones = document.getElementById("botonesAccion");
-            if (botones.style.display === "none") {
-                botones.style.display = "block";
-            } else {
-                botones.style.display = "none";
-            }
+            botones.style.display = botones.style.display === "none" ? "block" : "none";
+        }
+
+        function irContacto() {
+            window.location.href = 'contacto.html';
         }
     </script>
 </body>
